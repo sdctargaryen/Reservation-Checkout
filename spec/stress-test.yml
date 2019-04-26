@@ -1,0 +1,17 @@
+config:
+  target: 'http://localhost:3003'
+  phases:
+    - duration: 60
+      arrivalRate: 1000
+      name: "Warm up the application"
+    - duration: 120
+      arrivalRate: 10000
+      rampTo: 20000
+      name: "Ramp up the application"
+    - duration: 600
+      arrivalRate: 100000
+      name: "Sustained max load"
+scenarios:
+  - flow:
+    - get:
+        url: "/api/reservations/{{ $randomNumber(1,10000000) }}"

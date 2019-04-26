@@ -8,7 +8,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/reservation', {
 const Schema = mongoose.Schema;
 
 const listingSchema = new Schema({
-  propertyId: Number,
+  itemID: { type: Number, unique: true, dropDups: true },
+  propertyId: { type: Number, unique: true, dropDups: true },
   owner: String,
   maxGuests: Number,
   nightlyRate: Number,
@@ -21,7 +22,19 @@ const listingSchema = new Schema({
   taxRate: Number,
   reviewsCount: Number,
   listing: Number,
-  daysSinceUpdated: Number
+  daysSinceUpdated: Number,
+  daysBooked: [reservationSchema]
+});
+
+var reservationSchema = new mongoose.Schema({
+  userID: { type: Number, required: true },
+  numGuests: Number,
+  bookedDate: [
+    {
+      days: [Date],
+      prices: [Number]
+    }
+  ]
 });
 
 const Listings = mongoose.model('Listing', listingSchema);
