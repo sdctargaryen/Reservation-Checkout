@@ -23,19 +23,19 @@ const listingSchema = new Schema({
   reviewsCount: Number,
   listing: Number,
   daysSinceUpdated: Number,
-  daysBooked: [reservationSchema]
+  //daysBooked: [reservationSchema]
 });
 
-var reservationSchema = new mongoose.Schema({
-  userID: { type: Number, required: true },
-  numGuests: Number,
-  bookedDate: [
-    {
-      days: [Date],
-      prices: [Number]
-    }
-  ]
-});
+// var reservationSchema = new mongoose.Schema({
+//   userID: { type: Number, required: true },
+//   numGuests: Number,
+//   bookedDate: [
+//     {
+//       days: [Date],
+//       prices: [Number]
+//     }
+//   ]
+// });
 
 const Listings = mongoose.model('Listing', listingSchema);
 
