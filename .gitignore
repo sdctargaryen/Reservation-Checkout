@@ -1,3 +1,5 @@
 node_modules
 package-lock.json
-bundle.js
+dist/bundle.js
+database/csv/reservation.csv
+newrelic.js
