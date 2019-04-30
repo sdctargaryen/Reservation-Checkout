@@ -43,9 +43,6 @@ connection
     .then( () => { console.log('Synced with MYSQL Databse')})
     .catch( err => console.error(err));
 
-module.exports = {
-    Model,
-    // BookedDates
-};
+module.exports = Model;
 
 // Create table if not exists reservations (  propertyId INT, owner TEXT, maxGuests INT, nightlyRate FLOAT, avgRating FLOAT, minStay INT, serviceFeeRate FLOAT, recentViews INT, reviewsCount INT, daysSinceUpdated INT, popular TINYINT, cleaningFee INT, taxRate FLOAT,  PRIMARY KEY (propertyId) ) ENGINE=INNODB;
