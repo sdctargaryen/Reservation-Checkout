@@ -19,23 +19,24 @@ const Model = connection.define(
         cleaningFee: {type: Sequelize.FLOAT },
         taxRate: {type: Sequelize.FLOAT }
     },
-    { timestamps: false },
-), BookedDates = connection.define(
-    'BookedDates', 
-    {
-        userID: { type: Sequelize.INTEGER, unique: true },
-        numGuests: Sequelize.INTEGER,
-        bookedDate: [
-            {
-            days: Date,
-            price: Sequelize.INTEGER
-            }
-        ]
-    }
+    { timestamps: false }
+    // ,
+// ), BookedDates = connection.define(
+//     'BookedDates', 
+//     {
+//         userID: { type: Sequelize.INTEGER, unique: true },
+//         numGuests: Sequelize.INTEGER,
+//         bookedDate: [
+//             {
+//             days: Date,
+//             price: Sequelize.INTEGER
+//             }
+//         ]
+//     }
 );
 
-Model.hasMany(BookedDates); // Will add userId to Task model
-BookedDates.belongsTo(Model); // Will also add userId to Task model
+// Model.hasMany(BookedDates); // Will add userId to Task model
+// BookedDates.belongsTo(Model); // Will also add userId to Task model
 
 connection
     .sync()
@@ -44,7 +45,7 @@ connection
 
 module.exports = {
     Model,
-    BookedDates
+    // BookedDates
 };
 
 // Create table if not exists reservations (  propertyId INT, owner TEXT, maxGuests INT, nightlyRate FLOAT, avgRating FLOAT, minStay INT, serviceFeeRate FLOAT, recentViews INT, reviewsCount INT, daysSinceUpdated INT, popular TINYINT, cleaningFee INT, taxRate FLOAT,  PRIMARY KEY (propertyId) ) ENGINE=INNODB;
