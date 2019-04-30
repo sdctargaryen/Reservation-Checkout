@@ -1,7 +1,7 @@
 const router = require('express').Router();
 // const controller = require('./controller.js');
-const controller = require('../database/mysql/controller.js');
-// const controller = require('../database/postgres/controller.js');
+// const controller = require('../database/mysql/controller.js');
+const controller = require('../database/postgres/controller.js');
 
 router.route('/')
     .get(controller.getALL)
