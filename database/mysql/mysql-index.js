@@ -4,7 +4,6 @@ const Sequelize = require('sequelize');
 const sequelize = new Sequelize('sdc', 'test', 'my_password', {
   // host: 'localhost',
   host: '3.83.68.241',
-  database: 'sdc',
   dialect: 'mysql'
 });
 

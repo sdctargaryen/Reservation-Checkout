@@ -47,3 +47,6 @@ writeTenMillionTimes(ws, () => {
 // LOAD DATA INFILE '/Users/tracyyu/hrla28/SDC/Reservation-Checkout/database/csv/reservation.csv' INTO TABLE reservations FIELDS TERMINATED BY ',' LINES TERMINATED BY'\n' IGNORE 1 ROWS (itemID, propertyId,owner,maxGuests,nightlyRate,avgRating,minStay,serviceFeeRate,recentViews,reviewsCount,daysSinceUpdated,@popular,cleaningFee,taxRate) SET popular = (@popular = 'true');
 
 // Create table if not exists reservations ( itemID INT, propertyId INT, owner TEXT, maxGuests INT, nightlyRate FLOAT, avgRating FLOAT, minStay INT, serviceFeeRate FLOAT, recentViews INT, reviewsCount INT, daysSinceUpdated INT, popular TINYINT, cleaningFee INT, taxRate FLOAT,  PRIMARY KEY (itemID) ) ENGINE=INNODB;
+
+// remote access to EDC
+// LOAD DATA LOCAL INFILE '/Users/tracyyu/hrla28/SDC/Reservation-Checkout/database/csv/reservation.csv' INTO TABLE Reservations FIELDS TERMINATED BY ',' LINES TERMINATED BY'\n' IGNORE 1 ROWS (itemID, propertyId,owner,maxGuests,nightlyRate,avgRating,minStay,serviceFeeRate,recentViews,reviewsCount,daysSinceUpdated,@popular,cleaningFee,taxRate) SET popular = (@popular = 'true');
