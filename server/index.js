@@ -13,5 +13,8 @@ app.use(morgan('dev'));
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
 
 app.use('/api/reservations', router);
+app.use('/loaderio-1f922ed8c29eea0f9d45f0e55b3a234b', (req, res) => {
+    res.sendStatus(200).send('loaderio-1f922ed8c29eea0f9d45f0e55b3a234b');
+});
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
